@@ -22,18 +22,17 @@ public class Triangulo {
 		if (x < 0) {
 			System.out.println("No se ingreso un numero valido");
 			return;
-		}
-		System.out.println(agregarLado(x, lado1, lado2, lado3, 3));
-	}
-
-	private String agregarLado(int x, int lado1, int lado2, int lado3, int i) {
-		if (i == 0)
-			return "Se ingresaron parametros de mas";
-		if (lado1 == -1) {
+		} else if (lado1 == -1) {
 			lado1 = x;
-			return "Lado 1: " + x;
-		}
-		return agregarLado(x, lado2, lado3, lado3, --i);
+			System.out.println("Lado 1: " + x);
+		} else if (lado2 == -1) {
+			lado2 = x;
+			System.out.println("Lado 2: " + x);
+		} else if (lado3 == -1) {
+			lado3 = x;
+			System.out.println("Lado 3: " + x);
+		} else
+			System.out.println("Se ingresaron parametros de mas");
 	}
 
 	private void resolver() {
