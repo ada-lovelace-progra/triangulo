@@ -7,15 +7,19 @@ public class Triangulo {
 	private String queEs;
 
 	public Triangulo(int lado1, int lado2, int lado3) {
+		this();
 		agregarLado(lado1);
 		agregarLado(lado2);
 		agregarLado(lado3);
-		queEs = "No se ejecuto el metodo resolver";
 	}
 
 	public Triangulo() {
 		lado1 = lado2 = lado3 = -1;
 		queEs = "No se ejecuto el metodo resolver";
+	}
+
+	public Triangulo(String text, String text2, String text3) throws Exception{
+		this(Integer.parseInt(text),Integer.parseInt(text2),Integer.parseInt(text3));
 	}
 
 	public void agregarLado(int x) {
@@ -71,15 +75,9 @@ public class Triangulo {
 
 	public String print() {
 		resolver();
-		if (lado3 == -1)
+		if (lado3 != -1)
 			return queEs;
-		return shiftear(lado1, lado2, lado3, 1);
-	}
-
-	private String shiftear(int lado1, int lado2, int lado3, int i) {
-		if (i == 4)
-			return "y es: " + queEs;
-		return "Lado " + i + ": " + lado1 + " " + shiftear(lado2, lado3, lado1, ++i);
+		return "Triangulo no valido";//shiftear(lado1, lado2, lado3, 1);
 	}
 
 	public void agregarLado(String readLine) {
