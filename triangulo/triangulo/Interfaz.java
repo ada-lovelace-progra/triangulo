@@ -85,6 +85,9 @@ public class Interfaz {
 		frame.getContentPane().add(lblLado_2);
 
 		resultado = new JTextField();
+		resultado.setRequestFocusEnabled(false);
+		resultado.setFocusTraversalKeysEnabled(false);
+		resultado.setFocusable(false);
 		resultado.setEditable(false);
 		resultado.setBounds(10, 93, 241, 44);
 		frame.getContentPane().add(resultado);
